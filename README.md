@@ -35,7 +35,7 @@ The table in the image below specify **voxel sizes and image dimensions** for ea
 - Apply **K-Means clustering** followed by **morphological operations** to refine the lung region.  
 - Identify the **connected component closest to the center**, corresponding to the lungs.  
 
-![![image](https://github.com/user-attachments/assets/379b22e4-ce84-4c48-8517-abb5feba5e8c)]  
+![image](https://github.com/user-attachments/assets/379b22e4-ce84-4c48-8517-abb5feba5e8c)
 
 
 ### **3️⃣ Registration**  
@@ -88,7 +88,7 @@ The table below shows the **TRE values before and after registration** for all f
 Follow these steps to set up and run the pipeline:
 
 ### 1️ Download the Dataset  
-- Download the dataset from **[https://drive.google.com/drive/folders/1_fWCUPDjhVR5nT0u5x4tiMtRZ0tmPfhF?usp=drive_link]** (insert dataset link).  
+- Download the dataset from **[https://drive.google.com/drive/folders/1_fWCUPDjhVR5nT0u5x4tiMtRZ0tmPfhF?usp=drive_link]**  
 - Extract the dataset to a location on your computer.  
 
 ### 2️ Clone the Repository Configure Paths 
