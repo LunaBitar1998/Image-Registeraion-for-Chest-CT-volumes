@@ -104,11 +104,11 @@ cd <repository_folder>
 - Set the necessary paths in the notebook:  
   - **`base_path`** → Path to the dataset location.  
   - **`elastix_path` & `transformix_path`** → Paths to your local installation of **Elastix** and **Transformix**.  
-  - **Voxel sizes and image dimensions** for each dataset are available in the **dataset folder**.  
+  - **Voxel sizes and image dimensions** for each dataset are available in the table in the **Dataset Summary**.  
 
 ### 4️ Run the Pipeline  
 - Open **`Run_Pipeline.ipynb`** in Jupyter Notebook.  
-- Execute all cells sequentially to process:  
+- Execute the file to process:  
   - **Preprocessing**  
   - **Lung Segmentation**  
   - **Registration using Elastix**  
