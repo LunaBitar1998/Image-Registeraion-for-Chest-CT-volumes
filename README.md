@@ -1,6 +1,6 @@
 # Image-Registeraion-for-Chest-CT-volumes
-![image](https://github.com/user-attachments/assets/d655d302-458e-4bb9-8342-2f3e3f10484c)
- 
+![image](https://github.com/user-attachments/assets/07fd9bfa-80ad-4ecc-8aea-1dcafc341a47)
+
 
 ## **Overview**  
 This repository contains a pipeline developed as part of the **[Challenge Name]**. The objective is to register inhale and exhale CT images, aligning anatomical landmarks to minimize the **Target Registration Error (TRE)**. Given the inhale landmarks, the goal is to estimate the corresponding exhale landmarks with the lowest possible error.  
