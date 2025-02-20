@@ -95,7 +95,7 @@ Follow these steps to set up and run the pipeline:
 Open a terminal or command prompt and run the following command:  
 
 
-git clone <repository_link>
+git clone <[repository_link](https://github.com/LunaBitar1998/Image-Registeraion-for-Chest-CT-volumes)>
 cd <repository_folder>
  
  
