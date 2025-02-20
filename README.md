@@ -94,7 +94,7 @@ Follow these steps to set up and run the pipeline:
 ### 2️ Clone the Repository Configure Paths 
 Open a terminal or command prompt and run the following command:  
 
-```bash
+
 git clone <repository_link>
 cd <repository_folder>
  
