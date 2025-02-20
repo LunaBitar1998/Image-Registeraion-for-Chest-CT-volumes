@@ -8,8 +8,8 @@ This repository contains a pipeline developed as part of the **[Challenge Name]*
 ---
 
 ## **Dataset Summary**  
-The dataset is available for download at **[Dataset Link](#)**. It consists of **4 patient folders**, each containing:  
-- **Two NIfTI files**: CT scans at two different respiratory phases.  
+The dataset is available for download at **[https://drive.google.com/drive/folders/1_fWCUPDjhVR5nT0u5x4tiMtRZ0tmPfhF?usp=drive_link](#)**. It consists of **4 patient folders**, each containing:  
+- **Two NIfTI files**: CT scans at two different respiratory phases (inhale and exhale).
 - **Two TXT files**: Containing landmark coordinates for both phases.  
 
 | Patient ID | Inhale Image | Exhale Image | Inhale Landmarks | Exhale Landmarks |
@@ -19,7 +19,7 @@ The dataset is available for download at **[Dataset Link](#)**. It consists of *
 | COPD3      | `copd3_iBHCT.nii` | `copd3_eBHCT.nii` | `copd3_300_iBH_xyz_r1.txt` | `copd3_300_eBH_xyz_r1.txt` |
 | COPD4      | `copd4_iBHCT.nii` | `copd4_eBHCT.nii` | `copd4_300_iBH_xyz_r1.txt` | `copd4_300_eBH_xyz_r1.txt` |
 
-A separate file in the dataset directory provides **voxel sizes and image dimensions** for each case.
+A separate file in the dataset directory provide **voxel sizes and image dimensions** for each case.
 
 ---
 
@@ -33,8 +33,8 @@ A separate file in the dataset directory provides **voxel sizes and image dimens
 - Apply **K-Means clustering** followed by **morphological operations** to refine the lung region.  
 - Identify the **connected component closest to the center**, corresponding to the lungs.  
 
-![Placeholder for Segmentation Results 1]  
-![Placeholder for Segmentation Results 2]  
+![![image](https://github.com/user-attachments/assets/379b22e4-ce84-4c48-8517-abb5feba5e8c)]  
+
 
 ### **3️⃣ Registration**  
 - The two images are aligned using **Elastix registration**.  
@@ -43,7 +43,7 @@ A separate file in the dataset directory provides **voxel sizes and image dimens
   - **B-Spline transformation** for local deformations.  
 
 ### **4️⃣ Landmark Transformation**  
-- Apply **Transformix** to predict the exhale landmarks from the inhale landmarks.  
+- Apply **Transformix** to predict the exhale landmarks from the inhale landmarks using the transformation file resulting from the registerion step.
 
 ### **5️⃣ Evaluation**  
 - Compute the **TRE (Target Registration Error) after registration** to assess alignment accuracy.  
@@ -53,14 +53,14 @@ A separate file in the dataset directory provides **voxel sizes and image dimens
 ## **Results**  
 The table below shows the **TRE values before and after registration** for all four patient images:  
 
-| Patient ID | TRE Before (mm) | TRE After (mm) | Improvement (%) |
-|------------|---------------|--------------|----------------|
-| COPD1      | **X.XX**      | **Y.YY**     | **Z%**         |
-| COPD2      | **X.XX**      | **Y.YY**     | **Z%**         |
-| COPD3      | **X.XX**      | **Y.YY**     | **Z%**         |
-| COPD4      | **X.XX**      | **Y.YY**     | **Z%**         |
+| Patient ID | TRE Before (mm) | TRE After (mm)|
+|------------|---------------|--------------|
+| COPD1      | **25.9**      | **1.48**      |
+| COPD2      | **21.77**      | **3.19**     |
+| COPD3      | **12.29**      | **1.28**     |        
+| COPD4      | **30.90**      | **1.67**     |
 
-(*Replace X.XX, Y.YY, and Z% with actual results.*)  
+
 
 ---
 
