@@ -3,7 +3,7 @@
 
 
 ## **Overview**  
-This repository contains a pipeline developed as part of the **[Challenge Name]**. The objective is to register inhale and exhale CT images, aligning anatomical landmarks to minimize the **Target Registration Error (TRE)**. Given the inhale landmarks, the goal is to estimate the corresponding exhale landmarks with the lowest possible error.  
+This repository contains a pipeline developed as part of the **[4DCT DIR-Lab Challenge]**,which addresses Chronic Obstructive Pulmonary Disease (COPD) The objective is to register inhale and exhale CT images, aligning anatomical landmarks to minimize the **Target Registration Error (TRE)**. Given the inhale landmarks, the goal is to estimate the corresponding exhale landmarks with the lowest possible error.  
 
 ---
 
@@ -19,7 +19,9 @@ The dataset is available for download at **[https://drive.google.com/drive/folde
 | COPD3      | `copd3_iBHCT.nii` | `copd3_eBHCT.nii` | `copd3_300_iBH_xyz_r1.txt` | `copd3_300_eBH_xyz_r1.txt` |
 | COPD4      | `copd4_iBHCT.nii` | `copd4_eBHCT.nii` | `copd4_300_iBH_xyz_r1.txt` | `copd4_300_eBH_xyz_r1.txt` |
 
-A separate file in the dataset directory provide **voxel sizes and image dimensions** for each case.
+The table in the image below specify **voxel sizes and image dimensions** for each case along with the initial displacement before registeration.
+![image](https://github.com/user-attachments/assets/9c337e89-1965-4b4e-9b7e-54211f8db50b)
+
 
 ---
 
@@ -65,3 +67,51 @@ The table below shows the **TRE values before and after registration** for all f
 ---
 
 ## **Repository Structure**  
+   
+├── 📂 Parameters/  
+│   ├── Parameters.Par0011.affine.txt  
+│   ├── Parameters.Par0011.bspline1_s.txt  
+│  
+├── 📂 src/  
+│   ├── evaluation.py  
+│   ├── main.py  
+│   ├── preprocessing.py  
+│   ├── registration.py  
+│   ├── segmentation.py  
+│   ├── utils.py  
+│  
+├── 📜 README.md  # Project documentation  
+├── 📜 Run_Pipeline.ipynb  # Jupyter notebook to run the pipeline  
+
+##  **How to Use This Repository**  
+
+Follow these steps to set up and run the pipeline:
+
+### 1️ Download the Dataset  
+- Download the dataset from **[https://drive.google.com/drive/folders/1_fWCUPDjhVR5nT0u5x4tiMtRZ0tmPfhF?usp=drive_link]** (insert dataset link).  
+- Extract the dataset to a location on your computer.  
+
+### 2️ Clone the Repository Configure Paths 
+Open a terminal or command prompt and run the following command:  
+
+```bash
+git clone <repository_link>
+cd <repository_folder>
+ 
+ 
+### 3️ Configure Paths  
+- Open **`Run_Pipeline.ipynb`** in Jupyter Notebook.  
+- Set the necessary paths in the notebook:  
+  - **`base_path`** → Path to the dataset location.  
+  - **`elastix_path` & `transformix_path`** → Paths to your local installation of **Elastix** and **Transformix**.  
+  - **Voxel sizes and image dimensions** for each dataset are available in the **dataset folder**.  
+
+### 4️ Run the Pipeline  
+- Open **`Run_Pipeline.ipynb`** in Jupyter Notebook.  
+- Execute all cells sequentially to process:  
+  - **Preprocessing**  
+  - **Lung Segmentation**  
+  - **Registration using Elastix**  
+  - **Evaluation of TRE**  
+- The results will be saved in the corresponding output directories.  
+
